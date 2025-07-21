@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Password Generator</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <p id="password" name="password">Random Key</p>
+  <button onclick="generateRandomKey()">Generate Password</button>
+
+  <script>
+    function generateRandomKey() {
+      let result = "";
+      const characters = "!@#$%^&*()1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
+      const charactersLength = characters.length;
+
+      const length = 12; 
+
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength)); 
+      }
+
+      document.getElementById("password").textContent = result;
+    }
+  </script>
+</body>
+</html>
